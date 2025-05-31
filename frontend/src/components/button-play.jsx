@@ -5,9 +5,14 @@ function ActionButtons() {
   const navigate = useNavigate(); // Crée une instance de useNavigate
 
   const handleGameClick = () => {
+<<<<<<< HEAD
     navigate('/jeuxDrys/PalierPage'); // <-- C'est bien ce chemin-là qu'il faut
   };
   
+=======
+    navigate('/GamePage');  // Redirige vers '/game'
+  };
+>>>>>>> celia/branch_celia
 
   const handleSettingsClick = () => {
     // Affiche un message dans la console

@@ -1,6 +1,7 @@
 const Utilisateur = require("../models/Utilisateur");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
+<<<<<<< HEAD
 const crypto = require("crypto");
 const { sendVerificationEmail } = require("../config/mailer"); // assure-toi d'avoir exporté correctement
 
@@ -47,6 +48,27 @@ exports.inscription = async (req, res) => {
       res.status(500).json({ message: "Erreur serveur" });
     }
   };
+=======
+
+exports.inscription = async (req, res) => {
+    const { nom, prenom, age, email, motDePasse } = req.body;
+
+    try {
+        let utilisateur = await Utilisateur.findOne({ email });
+        if (utilisateur) return res.status(400).json({ message: "Email déjà utilisé" });
+
+        const sel = await bcrypt.genSalt(10);
+        const hash = await bcrypt.hash(motDePasse, sel);
+
+        utilisateur = new Utilisateur({ nom, prenom, age, email, motDePasse: hash });
+        await utilisateur.save();
+
+        res.status(201).json({ message: "Inscription réussie" });
+    } catch (error) {
+        res.status(500).json({ message: "Erreur serveur" });
+    }
+};
+>>>>>>> celia/branch_celia
 
 exports.connexion = async (req, res) => {
     const { email, motDePasse } = req.body;
@@ -58,14 +80,18 @@ exports.connexion = async (req, res) => {
         const estValide = await bcrypt.compare(motDePasse, utilisateur.motDePasse);
         if (!estValide) return res.status(400).json({ message: "Mot de passe incorrect" });
 
+<<<<<<< HEAD
         if (!utilisateur.estVerifie) {
             return res.status(403).json({ message: "Compte non vérifié. Veuillez vérifier votre email." });
         }
 
+=======
+>>>>>>> celia/branch_celia
         const token = jwt.sign({ id: utilisateur._id }, process.env.JWT_SECRET, { expiresIn: "7d" });
 
         res.json({ token, utilisateur });
     } catch (error) {
+<<<<<<< HEAD
         console.error("Erreur dans la connexion :", error);
         res.status(500).json({ message: "Erreur serveur" });
     }
@@ -91,3 +117,8 @@ exports.verifierCompte = async (req, res) => {
     }
   };
   
+=======
+        res.status(500).json({ message: "Erreur serveur" });
+    }
+};
+>>>>>>> celia/branch_celia

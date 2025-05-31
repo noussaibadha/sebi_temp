@@ -1,4 +1,5 @@
 const express = require("express");
+<<<<<<< HEAD
 const { inscription, connexion, verifierCompte } = require("../controllers/utilisateurController");
 const router = express.Router();
 const utilisateur = require("../models/Utilisateur");
@@ -24,5 +25,13 @@ router.get("/verification", verifierCompte);
 router.get("/admin/dashboard", verifierToken, verifierAdmin, (req, res) => { 
   res.json({ message: "Bienvenue dans l'espace admin", utilisateur: req.utilisateur });
 });
+=======
+const { inscription, connexion } = require("../controllers/utilisateurController");
+
+const router = express.Router();
+
+router.post("/inscription", inscription);
+router.post("/connexion", connexion);
+>>>>>>> celia/branch_celia
 
 module.exports = router;

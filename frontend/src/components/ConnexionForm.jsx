@@ -1,4 +1,5 @@
 import { useForm } from "react-hook-form";
+<<<<<<< HEAD
 import { useAuth } from "../contexts/AuthContexte";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
@@ -6,12 +7,19 @@ import { useNavigate } from "react-router-dom";
 
 const Connexion = () => {
   const navigate = useNavigate();
+=======
+import { useAuth } from "../../contexts/AuthContexte";
+import axios from "axios";
+
+const Connexion = () => {
+>>>>>>> celia/branch_celia
   const { enregistrerUtilisateur } = useAuth();
   const { register, handleSubmit, formState: { errors } } = useForm();
 
   const onSubmit = async (data) => {
     try {
       const response = await axios.post("http://localhost:8008/api/utilisateurs/connexion", data);
+<<<<<<< HEAD
       const { utilisateur } = response.data;
     console.log(utilisateur); // pour voir si y'a bien _id
 
@@ -38,6 +46,12 @@ const Connexion = () => {
     } catch (error) {
       console.error("Erreur de connexion :", error);
       alert(error.response?.data?.message || "Erreur lors de la connexion");
+=======
+      enregistrerUtilisateur(response.data.utilisateur);
+      alert("Connexion réussie !");
+    } catch (error) {
+      console.error("Erreur de connexion :", error);
+>>>>>>> celia/branch_celia
     }
   };
 

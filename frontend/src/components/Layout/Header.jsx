@@ -13,6 +13,7 @@ const Header = () => {
   const noBannerRoutes = ["/connexion", "/inscription"];
   const isNoBannerPage = noBannerRoutes.includes(location.pathname);
   const { t, i18n } = useTranslation();
+<<<<<<< HEAD
   const [utilisateur, setUtilisateur] = useState(null);
 
   useEffect(() => {
@@ -26,6 +27,8 @@ const Header = () => {
       }
     }
   }, []);
+=======
+>>>>>>> celia/branch_celia
 
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
@@ -88,6 +91,7 @@ const Header = () => {
 
         {/* Icône profil + langue en desktop */}
         <div className="hidden lg:flex items-center gap-6 mr-2">
+<<<<<<< HEAD
           {utilisateur ? (
             <Link to="/profil">
               <img
@@ -117,6 +121,14 @@ const Header = () => {
             </button>
           )}
 
+=======
+          <Link to="/connexion" className="hover:scale-110 transition">
+            <UserCircle
+              size={28}
+              className="text-black hover:text-fondOrange"
+            />
+          </Link>
+>>>>>>> celia/branch_celia
           <LanguageSwitcher />
         </div>
 

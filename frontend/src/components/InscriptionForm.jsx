@@ -1,5 +1,6 @@
 import { useForm } from "react-hook-form";
 import axios from "axios";
+<<<<<<< HEAD
 import { useState } from "react";
 
 const Inscription = () => {
@@ -23,6 +24,16 @@ const Inscription = () => {
       await axios.post("http://localhost:8008/api/utilisateurs/inscription", finalData);
       alert("Inscription réussie !");
       localStorage.setItem("utilisateur", JSON.stringify(finalData)); // dans ton `onSubmit`
+=======
+
+const Inscription = () => {
+  const { register, handleSubmit, formState: { errors } } = useForm();
+
+  const onSubmit = async (data) => {
+    try {
+      await axios.post("http://localhost:8008/api/utilisateurs/inscription", data);
+      alert("Inscription réussie !");
+>>>>>>> celia/branch_celia
     } catch (error) {
       console.error("Erreur d'inscription :", error);
     }
@@ -30,6 +41,7 @@ const Inscription = () => {
 
   return (
     <div className="flex items-center justify-center h-screen bg-gray-100">
+<<<<<<< HEAD
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="bg-white p-6 rounded-lg shadow-lg max-w-md w-full"
@@ -47,6 +59,13 @@ const Inscription = () => {
 
         {/* Nom */}
         <label className="block mt-3">Nom :</label>
+=======
+      <form onSubmit={handleSubmit(onSubmit)} className="bg-white p-6 rounded-lg shadow-lg">
+        <h2 className="text-2xl font-bold mb-4">Inscription</h2>
+
+        {/* Nom */}
+        <label className="block">Nom :</label>
+>>>>>>> celia/branch_celia
         <input
           type="text"
           {...register("nom", { required: "Nom requis" })}
@@ -54,6 +73,7 @@ const Inscription = () => {
         />
         {errors.nom && <p className="text-red-500">{errors.nom.message}</p>}
 
+<<<<<<< HEAD
         {/* Date de naissance */}
         <label className="block mt-3">Date de naissance :</label>
         <input
@@ -63,6 +83,8 @@ const Inscription = () => {
         />
         {errors.dateDeNaissance && <p className="text-red-500">{errors.dateDeNaissance.message}</p>}
 
+=======
+>>>>>>> celia/branch_celia
         {/* Email */}
         <label className="block mt-3">Email :</label>
         <input
@@ -76,14 +98,19 @@ const Inscription = () => {
         <label className="block mt-3">Mot de passe :</label>
         <input
           type="password"
+<<<<<<< HEAD
           {...register("motDePasse", {
             required: "Mot de passe requis",
             minLength: { value: 6, message: "Minimum 6 caractères" },
           })}
+=======
+          {...register("motDePasse", { required: "Mot de passe requis", minLength: { value: 6, message: "Minimum 6 caractères" } })}
+>>>>>>> celia/branch_celia
           className="border p-2 rounded w-full"
         />
         {errors.motDePasse && <p className="text-red-500">{errors.motDePasse.message}</p>}
 
+<<<<<<< HEAD
         {/* Avatar */}
         <label className="block mt-4 mb-1">Choisis un avatar :</label>
         <div className="flex gap-3 mb-4">
@@ -100,6 +127,8 @@ const Inscription = () => {
           ))}
         </div>
 
+=======
+>>>>>>> celia/branch_celia
         {/* Bouton */}
         <button type="submit" className="mt-4 bg-green-500 text-white p-2 rounded w-full">
           S'inscrire

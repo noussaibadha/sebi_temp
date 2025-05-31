@@ -15,6 +15,7 @@ const verifierToken = (req, res, next) => {
 };
 
 module.exports = verifierToken;
+<<<<<<< HEAD
 
 const verifierAdmin = (req, res, next) => {
   if (req.utilisateur.role !== "admin") {
@@ -24,3 +25,5 @@ const verifierAdmin = (req, res, next) => {
 };
 
 module.exports = verifierAdmin;
+=======
+>>>>>>> celia/branch_celia

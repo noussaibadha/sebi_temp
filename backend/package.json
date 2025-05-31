@@ -5,8 +5,12 @@
   "scripts": {
     "start": "node server.js",
     "dev": "nodemon server.js",
+<<<<<<< HEAD
     "test": "mocha --exit",
     "nodemon": "nodemon server.js"
+=======
+    "test": "mocha --exit"
+>>>>>>> celia/branch_celia
   },
   "keywords": [],
   "author": "",
@@ -20,11 +24,18 @@
     "express": "^4.21.2",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.11.0",
+<<<<<<< HEAD
     "nodemailer": "^6.10.1",
+=======
+>>>>>>> celia/branch_celia
     "winston": "^3.17.0"
   },
   "devDependencies": {
     "mocha": "^11.1.0",
+<<<<<<< HEAD
     "nodemon": "^3.1.10"
+=======
+    "nodemon": "^3.1.9"
+>>>>>>> celia/branch_celia
   }
 }

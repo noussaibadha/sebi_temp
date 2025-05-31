@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { useForm } from "react-hook-form";
 import axios from "axios";
 
@@ -25,6 +26,21 @@ const ContactForm = () => {
   };
   
 
+=======
+// import { useForm } from "react-hook-form";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+const ContactForm = () => {
+  // const {
+  //   register,
+  //   handleSubmit,
+  //   formState: { errors },
+  // } = useForm();
+
+  // const onSubmit = (data) => {
+  //   console.log("Form Submitted:", data);
+  // };
+  // Ajoutez ici votre logique d'envoi (e.g., API call)
+>>>>>>> celia/branch_celia
 
   return (
     <div>
@@ -33,7 +49,11 @@ const ContactForm = () => {
           CONTACT
         </h2>
         <div className="bg-white rounded-2xl shadow-xl w-full max-w-2xl mx-auto p-8">
+<<<<<<< HEAD
           <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-6">
+=======
+          <form className="flex flex-col gap-6">
+>>>>>>> celia/branch_celia
             <div>
               <label htmlFor="nom" className="block mb-2 text-sm font-medium">
                 Nom
@@ -41,6 +61,7 @@ const ContactForm = () => {
               <input
                 type="text"
                 id="nom"
+<<<<<<< HEAD
                 {...register("nom", { required: "Le nom est requis" })}
                 placeholder="Charlene Reed"
                 className="w-full border border-gray-300 text-sm rounded-md p-3 bg-gray-50"
@@ -50,15 +71,33 @@ const ContactForm = () => {
             <div>
               <label htmlFor="prenom" className="block mb-2 text-sm font-medium">
                 Prénom
+=======
+                placeholder="Charlene Reed"
+                className="w-full border border-gray-300 text-sm rounded-md p-3 bg-gray-50"
+              />
+            </div>
+            <div>
+              <label
+                htmlFor="prenom"
+                className="block mb-2 text-sm font-medium"
+              >
+                Prenom
+>>>>>>> celia/branch_celia
               </label>
               <input
                 type="text"
                 id="prenom"
+<<<<<<< HEAD
                 {...register("prenom", { required: "Le prénom est requis" })}
                 placeholder="Charlene"
                 className="w-full border border-gray-300 text-sm rounded-md p-3 bg-gray-50"
               />
               {errors.prenom && <p className="text-red-500 text-sm mt-1">{errors.prenom.message}</p>}
+=======
+                placeholder="Charlene Reed"
+                className="w-full border border-gray-300 text-sm rounded-md p-3 bg-gray-50"
+              />
+>>>>>>> celia/branch_celia
             </div>
             <div>
               <label htmlFor="email" className="block mb-2 text-sm font-medium">
@@ -67,6 +106,7 @@ const ContactForm = () => {
               <input
                 type="email"
                 id="email"
+<<<<<<< HEAD
                 {...register("email", {
                   required: "L'email est requis",
                   pattern: {
@@ -81,15 +121,32 @@ const ContactForm = () => {
             </div>
             <div>
               <label htmlFor="message" className="block mb-2 text-sm font-medium">
+=======
+                placeholder="charlenereed@gmail.com"
+                className="w-full border border-gray-300 text-sm rounded-md p-3 bg-gray-50"
+              />
+            </div>
+            <div>
+              <label
+                htmlFor="message"
+                className="block mb-2 text-sm font-medium"
+              >
+>>>>>>> celia/branch_celia
                 Message
               </label>
               <textarea
                 id="message"
                 rows="4"
+<<<<<<< HEAD
                 {...register("message", { required: "Le message est requis" })}
                 className="w-full border border-gray-300 text-sm rounded-md p-3 bg-gray-50"
               ></textarea>
               {errors.message && <p className="text-red-500 text-sm mt-1">{errors.message.message}</p>}
+=======
+                placeholder=""
+                className="w-full border border-gray-300 text-sm rounded-md p-3 bg-gray-50"
+              ></textarea>
+>>>>>>> celia/branch_celia
             </div>
             <button
               type="submit"
